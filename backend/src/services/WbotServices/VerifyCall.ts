@@ -1,4 +1,4 @@
-import { Contact as WbotContact, Call, Client } from "whatsapp-web.js";
+import { Contact as WbotContact, Call, Client } from "whiskeysockets/baileys";
 import { logger } from "../../utils/logger";
 import FindOrCreateTicketService from "../TicketServices/FindOrCreateTicketService";
 import Setting from "../../models/Setting";

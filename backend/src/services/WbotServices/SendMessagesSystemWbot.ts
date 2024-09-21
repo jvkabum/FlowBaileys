@@ -7,7 +7,7 @@ import {
   Client,
   List,
   MessageMedia
-} from "whatsapp-web.js";
+} from "whiskeysockets/baileys";
 import { Op } from "sequelize";
 import Message from "../../models/Message";
 import Ticket from "../../models/Ticket";

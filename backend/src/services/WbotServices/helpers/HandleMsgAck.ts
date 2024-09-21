@@ -1,4 +1,4 @@
-import { Message as WbotMessage, MessageAck } from "whatsapp-web.js";
+import { Message as WbotMessage, MessageAck } from "whiskeysockets/baileys";
 import Message from "../../../models/Message";
 import Ticket from "../../../models/Ticket";
 import { logger } from "../../../utils/logger";

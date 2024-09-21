@@ -1,5 +1,5 @@
 import { join } from "path";
-import { Client, MessageMedia } from "whatsapp-web.js";
+import { Client, MessageMedia } from "whiskeysockets/baileys";
 import Message from "../../models/Message";
 import MessagesOffLine from "../../models/MessageOffLine";
 import Ticket from "../../models/Ticket";

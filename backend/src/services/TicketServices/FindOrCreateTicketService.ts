@@ -1,6 +1,6 @@
 // import { subHours } from "date-fns";
 import { Op } from "sequelize";
-import { Message } from "whatsapp-web.js";
+import { Message } from "whiskeysockets/baileys";
 import Contact from "../../models/Contact";
 import Ticket from "../../models/Ticket";
 import User from "../../models/User";

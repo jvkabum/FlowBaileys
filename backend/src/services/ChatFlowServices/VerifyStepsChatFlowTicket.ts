@@ -1,5 +1,5 @@
 /* eslint-disable no-return-assign */
-import { Message as WbotMessage } from "whatsapp-web.js";
+import { Message as WbotMessage } from "whiskeysockets/baileys";
 import socketEmit from "../../helpers/socketEmit";
 import Ticket from "../../models/Ticket";
 import CreateMessageSystemService from "../MessageServices/CreateMessageSystemService";

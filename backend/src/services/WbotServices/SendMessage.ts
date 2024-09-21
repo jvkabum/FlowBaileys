@@ -1,5 +1,5 @@
 import { join } from "path";
-import { MessageMedia } from "whatsapp-web.js";
+import { MessageMedia } from "whiskeysockets/baileys";
 import Message from "../../models/Message";
 import { logger } from "../../utils/logger";
 import { getWbot } from "../../libs/wbot";

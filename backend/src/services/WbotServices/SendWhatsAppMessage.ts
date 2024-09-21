@@ -1,4 +1,4 @@
-import { Message as WbotMessage } from "whatsapp-web.js";
+import { Message as WbotMessage } from "whiskeysockets/baileys";
 import AppError from "../../errors/AppError";
 import GetTicketWbot from "../../helpers/GetTicketWbot";
 import GetWbotMessage from "../../helpers/GetWbotMessage";
