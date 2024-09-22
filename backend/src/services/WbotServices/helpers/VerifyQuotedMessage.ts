@@ -1,4 +1,4 @@
-import { Message as WbotMessage } from "whiskeysockets/baileys";
+import { Message as WbotMessage } from "whatsapp-web.js";
 import Message from "../../../models/Message";
 
 const VerifyQuotedMessage = async (

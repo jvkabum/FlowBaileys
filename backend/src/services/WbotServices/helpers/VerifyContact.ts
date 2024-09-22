@@ -1,4 +1,4 @@
-import { Contact as WbotContact } from "whiskeysockets/baileys;
+import { Contact as WbotContact } from "whatsapp-web.js";
 import Contact from "../../../models/Contact";
 import CreateOrUpdateContactService from "../../ContactServices/CreateOrUpdateContactService";
 

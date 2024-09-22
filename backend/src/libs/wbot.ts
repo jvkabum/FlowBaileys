@@ -1,5 +1,5 @@
 /* eslint-disable camelcase */
-import { Client, LocalAuth, DefaultOptions } from "whiskeysockets/baileys";
+import { Client, LocalAuth, DefaultOptions } from "whatsapp-web.js";
 import path from "path";
 import { rm } from "fs/promises";
 import { getIO } from "./socket";

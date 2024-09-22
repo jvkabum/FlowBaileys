@@ -1,4 +1,4 @@
-import { Client as Session } from "whiskeysockets/baileys";
+import { Client as Session } from "whatsapp-web.js";
 import { getWbot } from "../libs/wbot";
 import GetDefaultWhatsApp from "./GetDefaultWhatsApp";
 import Ticket from "../models/Ticket";

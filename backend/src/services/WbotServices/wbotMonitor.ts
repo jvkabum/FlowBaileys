@@ -1,4 +1,4 @@
-import { Client } from "whiskeysockets/baileys";
+import { Client } from "whatsapp-web.js";
 
 import { getIO } from "../../libs/socket";
 import Whatsapp from "../../models/Whatsapp";

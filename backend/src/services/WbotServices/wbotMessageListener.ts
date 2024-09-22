@@ -1,4 +1,4 @@
-import { Client } from "whiskeysockets/baileys";
+import { Client } from "whatsapp-web.js";
 
 import HandleMessage from "./helpers/HandleMessage";
 import HandleMsgAck from "./helpers/HandleMsgAck";

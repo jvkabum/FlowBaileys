@@ -3,7 +3,7 @@ import { promisify } from "util";
 import { writeFile } from "fs";
 import fs from "fs";
 
-import { Message as WbotMessage } from "whiskeysockets/baileys";
+import { Message as WbotMessage } from "whatsapp-web.js";
 import Contact from "../../../models/Contact";
 import Ticket from "../../../models/Ticket";
 import ffmpeg from "fluent-ffmpeg";

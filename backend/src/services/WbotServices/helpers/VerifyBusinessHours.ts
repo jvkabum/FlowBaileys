@@ -1,4 +1,4 @@
-import { Message as WbotMessage } from "whiskeysockets/baileys";
+import { Message as WbotMessage } from "whatsapp-web.js";
 import { fromUnixTime, parse, isWithinInterval } from "date-fns";
 // import { getIO } from "../../../libs/socket";
 // import SetTicketMessagesAsRead from "../../../helpers/SetTicketMessagesAsRead";

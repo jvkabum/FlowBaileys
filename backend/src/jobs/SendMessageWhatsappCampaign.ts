@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { join } from "path";
-import { MessageMedia, Message as WbotMessage } from "whiskeysockets/baileys";
+import { MessageMedia, Message as WbotMessage } from "whatsapp-web.js";
 import { logger } from "../utils/logger";
 import { getWbot } from "../libs/wbot";
 import CampaignContacts from "../models/CampaignContacts";

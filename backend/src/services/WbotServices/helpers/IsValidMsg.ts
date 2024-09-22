@@ -1,4 +1,4 @@
-import { Message as WbotMessage } from "whiskeysockets/baileys";
+import { Message as WbotMessage } from "whatsapp-web.js";
 
 const isValidMsg = (msg: WbotMessage): boolean => {
   if (msg.from === "status@broadcast") return false;

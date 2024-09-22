@@ -2,7 +2,7 @@ import {
   Contact as WbotContact,
   Message as WbotMessage,
   Client
-} from "whiskeysockets/baileys";
+} from "whatsapp-web.js";
 import Contact from "../../../models/Contact";
 import { logger } from "../../../utils/logger";
 import FindOrCreateTicketService from "../../TicketServices/FindOrCreateTicketService";

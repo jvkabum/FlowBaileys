@@ -1,4 +1,4 @@
-import { Client } from "whiskeysockets/baileys";
+import { Client } from "whatsapp-web.js";
 import Queue from "../../libs/Queue";
 import { logger } from "../../utils/logger";
 import VerifyStepsChatFlowTicket from "../ChatFlowServices/VerifyStepsChatFlowTicket";

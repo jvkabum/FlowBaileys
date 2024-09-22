@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { MessageMedia, Message as WbotMessage } from "whiskeysockets/baileys";
+import { MessageMedia, Message as WbotMessage } from "whatsapp-web.js";
 import fs from "fs";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
