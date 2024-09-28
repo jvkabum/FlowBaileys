@@ -1,13 +1,32 @@
-import "reflect-metadata";
-import "express-async-errors";
-import { Application, json, urlencoded } from "express";
-import cors from "cors";
-import cookieParser from "cookie-parser";
-import helmet from "helmet";
-import { logger } from "../utils/logger";
+import 'reflect-metadata';
+import 'express-async-errors';
+
+import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import {
+  Application,
+  json,
+  urlencoded,
+} from 'express';
+import helmet from 'helmet';
+import multer from 'multer';
+import path from 'path';
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  }
+});
+
+const upload = multer({ storage });
+
+import { logger } from '../utils/logger';
 
 export default async function express(app: Application): Promise<void> {
-  const origin = [process.env.FRONTEND_URL || "https://app.izing.io"];
+  const origin = [process.env.FRONTEND_URL || "https://app.flowdeskpro.io"];
   app.use(
     cors({
       origin,

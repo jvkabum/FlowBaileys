@@ -1,5 +1,9 @@
 import * as Yup from "yup";
 import { Request, Response } from "express";
+import multer from 'multer';
+import path from 'path';
+
+const upload = multer({ dest: 'uploads/' });
 import AppError from "../errors/AppError";
 
 import CreateFastReplyService from "../services/FastReplyServices/CreateFastReplyService";
@@ -23,7 +27,8 @@ export const store = async (req: Request, res: Response): Promise<Response> => {
   const newReply: FastReplyData = {
     ...req.body,
     userId: req.user.id,
-    tenantId
+    tenantId,
+    file: req.file ? req.file.filename : null
   };
 
   const schema = Yup.object().shape({
@@ -62,7 +67,8 @@ export const update = async (
   const fastReplyData: FastReplyData = {
     ...req.body,
     userId: req.user.id,
-    tenantId
+    tenantId,
+    file: req.file ? req.file.filename : null
   };
 
   const schema = Yup.object().shape({

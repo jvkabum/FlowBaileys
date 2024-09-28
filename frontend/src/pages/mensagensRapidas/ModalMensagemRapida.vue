@@ -69,6 +69,13 @@
               @input="(v) => mensagemRapida.message = v.target.value"
               :value="mensagemRapida.message"
             />
+            <div class="q-mt-md">
+              <label class="text-caption">Anexo:</label>
+              <input
+                type="file"
+                @change="onFileChange"
+              />
+            </div>
           </div>
         </div>
       </q-card-section>
@@ -88,6 +95,66 @@
           label="Salvar"
           color="positive"
           @click="handleMensagemRapida"
+        />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
+</template>
+
+<script>
+import { VEmojiPicker } from 'v-emoji-picker'
+import { CriarMensagemRapida, AlterarMensagemRapida } from 'src/service/mensagensRapidas'
+
+export default {
+  name: 'ModalMensagemRapida',
+  components: { VEmojiPicker },
+  props: {
+    modalMensagemRapida: Boolean,
+    mensagemRapidaEmEdicao: Object
+  },
+  data () {
+    return {
+      mensagemRapida: { ...this.mensagemRapidaEmEdicao },
+      file: null
+    }
+  },
+  watch: {
+    mensagemRapidaEmEdicao: {
+      handler (newVal) {
+        this.mensagemRapida = { ...newVal }
+      },
+      deep: true
+    }
+  },
+  methods: {
+    onFileChange (e) {
+      this.file = e.target.files[0]
+    },
+    async handleMensagemRapida () {
+      const formData = new FormData()
+      formData.append('key', this.mensagemRapida.key)
+      formData.append('message', this.mensagemRapida.message)
+      if (this.file) {
+        formData.append('file', this.file)
+      }
+      if (this.mensagemRapida.id) {
+        await AlterarMensagemRapida(this.mensagemRapida.id, formData)
+        this.$emit('mensagemRapida:editada', this.mensagemRapida)
+      } else {
+        const { data } = await CriarMensagemRapida(formData)
+        this.$emit('mensagemRapida:criada', data)
+      }
+      this.fecharModal()
+    },
+    fecharModal () {
+      this.$emit('update:modalMensagemRapida', false)
+    },
+    abrirModal () {
+      this.mensagemRapida = { ...this.mensagemRapidaEmEdicao }
+    }
+  }
+}
+</script>
         />
       </q-card-actions>
     </q-card>
