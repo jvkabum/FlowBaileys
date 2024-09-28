@@ -15,8 +15,9 @@ interface FastReplyData {
   key: string;
   message: string;
   userId: number;
-  tenantId: number | string;
-}
+  tenantId,
+  file: req.file ? req.file.filename : null  // Certificar-se de que o campo file está sendo passado
+  });
 
 export const store = async (req: Request, res: Response): Promise<Response> => {
   const { tenantId } = req.user;

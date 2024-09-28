@@ -42,6 +42,10 @@ class FastReply extends Model<FastReply> {
   @BelongsTo(() => Tenant)
   tenant: Tenant;
 
+  @AllowNull(true)
+  @Column
+  file: string;  // Adicionar o campo file
+
   @CreatedAt
   createdAt: Date;
 
