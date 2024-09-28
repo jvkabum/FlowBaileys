@@ -1,11 +1,12 @@
-// import AppError from "../../errors/AppError";
-import FastReply from "../../models/FastReply";
+import FastReply from "../../models/FastReply"; // Supondo que FastReply seja um modelo válido do seu ORM
 
-interface Request {
+// Interface da requisição, com 'file' sendo opcional
+interface FastReplyRequest {
   key: string;
   message: string;
   userId: number;
   tenantId: number | string;
+  file?: string | null;  // O campo 'file' é opcional
 }
 
 const CreateFastReplyService = async ({
@@ -13,17 +14,19 @@ const CreateFastReplyService = async ({
   message,
   userId,
   tenantId,
-  file  // Adicionar o campo file
-}: Request): Promise<FastReply> => {
+  file  // Campo opcional
+}: FastReplyRequest): Promise<FastReply> => {
+  // Criação do registro de FastReply
   const fastReplyData = await FastReply.create({
     key,
     message,
     userId,
     tenantId,
-    file  // Incluir o campo file na criação do registro
+    file  // Adicionar o campo 'file' à criação do registro, se houver
   });
 
   return fastReplyData;
 };
 
 export default CreateFastReplyService;
+
