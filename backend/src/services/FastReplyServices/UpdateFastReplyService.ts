@@ -1,6 +1,5 @@
 import AppError from "../../errors/AppError";
 import FastReply from "../../models/FastReply";
-export { UpdateFastReplyService };
 
 interface FastReplyData {
   key: string;
@@ -58,3 +57,5 @@ const UpdateFastReplyService = async ({
 
   return fastReplyModel;
 };
+
+export { UpdateFastReplyService };
