@@ -1,15 +1,10 @@
 import * as Yup from "yup";
 import { Request, Response } from "express";
-import multer from "multer";
-import path from "path";
-
-const upload = multer({ dest: 'uploads/' });
 import AppError from "../errors/AppError";
-
+import { UpdateFastReplyService } from "../services/FastReplyServices/UpdateFastReplyService";
 import CreateFastReplyService from "../services/FastReplyServices/CreateFastReplyService";
 import ListFastReplyService from "../services/FastReplyServices/ListFastReplyService";
 import DeleteFastReplyService from "../services/FastReplyServices/DeleteFastReplyService";
-import UpdateFastReplyService from "../services/FastReplyServices/UpdateFastReplyService";
 
 // Definição da interface FastReplyData
 interface FastReplyData {
@@ -125,4 +120,3 @@ export const remove = async (req: Request, res: Response): Promise<Response> => 
   
   return res.status(200).json({ message: "Fast Reply deleted" });
 };
-
